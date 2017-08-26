@@ -5,3 +5,10 @@ E:\Mine\Guvi Project\Source code\SelfHost Example\DACLibrary\bin\Debug\PropertyL
 E:\Mine\Guvi Project\Source code\SelfHost Example\DACLibrary\obj\Debug\DACLibrary.csprojResolveAssemblyReference.cache
 E:\Mine\Guvi Project\Source code\SelfHost Example\DACLibrary\obj\Debug\DACLibrary.dll
 E:\Mine\Guvi Project\Source code\SelfHost Example\DACLibrary\obj\Debug\DACLibrary.pdb
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\DACLibrary\bin\Debug\DACLibrary.dll
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\DACLibrary\bin\Debug\DACLibrary.pdb
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\DACLibrary\bin\Debug\PropertyLibrary.dll
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\DACLibrary\bin\Debug\PropertyLibrary.pdb
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\DACLibrary\obj\Debug\DACLibrary.csprojResolveAssemblyReference.cache
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\DACLibrary\obj\Debug\DACLibrary.dll
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\DACLibrary\obj\Debug\DACLibrary.pdb
