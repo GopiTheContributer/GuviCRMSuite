@@ -28,8 +28,6 @@ E:\Mine\Guvi Project\Source code\SelfHost Example\SelfHost Example\obj\Debug\Sel
 E:\Mine\Guvi Project\Source code\SelfHost Example\SelfHost Example\obj\Debug\SelfHost Example.exe
 E:\Mine\Guvi Project\Source code\SelfHost Example\SelfHost Example\obj\Debug\SelfHost Example.pdb
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\SelfHost Example.exe.config
-E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\obj\Debug\SelfHost Example.exe
-E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\obj\Debug\SelfHost Example.pdb
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\SelfHost Example.exe
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\SelfHost Example.pdb
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\BALLibrary.dll
@@ -56,3 +54,5 @@ E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\System.Web.Http.Owin.xml
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\DACLibrary.pdb
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\obj\Debug\SelfHost.csprojResolveAssemblyReference.cache
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\obj\Debug\SelfHost Example.exe
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\obj\Debug\SelfHost Example.pdb

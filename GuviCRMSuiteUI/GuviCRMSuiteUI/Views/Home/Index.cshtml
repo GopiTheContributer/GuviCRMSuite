@@ -1,40 +1,40 @@
-﻿@{
-    ViewBag.Title = "Login Page";
+﻿
+@{
+    //ViewBag.Title = "Index";
+    Layout = "~/_LayoutPage.cshtml";
 }
 
-<style>
-    .login-form {
-        margin: 0px auto;
-        padding: 12px 12px 12px 12px;
-    }
-</style>
-
-@*<div class="jumbotron">
-    </div>*@
-
 <div class="row">
+    <div class="col-lg-4">
+        asdfadfadfadfadfadfadfadf
+    </div>
     <div class="col-md-4">
-        <form class="login-form">
-            <input type="text" class="form-control" placeholder="Email address" id="txtUserName" required="" autofocus="">
-            <input type="password" class="form-control" placeholder="Password" required="" id="txtpassword">
-            <br />
-            <button class="btn btn-info btn-lg" id="btnLogin" type="submit">
-                Sign In
-            </button>
-        </form>
+        <section class="login-form">
+            <form method="post" action="#">
+                <input type="text" name="username" id="txtUsername" placeholder="Enter username" required="" autofocus="" class="form-control input-lg" />
+                <input type="password" class="form-control input-lg" id="txtPassword" placeholder="Password" required="" />
+                <div class="pwstrength_viewport_progress"></div>
+                <button type="submit" name="go" id="btnLogin" class="btn btn-lg btn-primary btn-block">Sign in</button>
+                <div>
+                    <a href="#">Forget password?</a>
+                </div>
+            </form>
+        </section>
     </div>
 </div>
 
 <script>
     $('#btnLogin').click(function () {
+        alert('username: ' + $('#txtUsername').val() + ' password: ' + $('#txtPassword').val());
 
         $.ajax({
-            url: "",
-            data: { username: $('#txtUserName').val(), password: $('#txtPassword').val() },
+            url: "http://localhost:1268/apilogin/login",
+            crossDomain: true,
+            cache: true,
             type: "POST",
-            dataType: "json",
-            success: function (data) { },
-            error: function (error) { }
+            data: { username: $('#txtUsername').val(), password: $('#txtPassword').val() },
+            success: function (data) { alert('success'); window.location.href = "../DashBoard.cshtml"; },
+            error: function (err) { alert(err); console.log(err); }
         });
     });
 </script>

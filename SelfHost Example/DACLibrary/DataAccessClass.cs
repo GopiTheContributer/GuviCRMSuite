@@ -16,6 +16,46 @@ namespace GuviCRMSuite.DACLibrary
         static SqlCommand cmd = null;
         #endregion
 
+        #region"Login"
+        public static bool GetLogin(string username, string password)
+        {
+            bool hasLogin = false;
+            try
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["CRMSuiteConStr"].ToString();
+                connection = new SqlConnection(connectionString);
+
+                using (connection = new SqlConnection(connectionString))
+                {
+                    DataSet ds = new DataSet();
+
+                    cmd = new SqlCommand("select count(*) haslogin from login where username = '" + username
+                        + "' and password = '" + password + "'", connection);
+                    connection.Open();
+                    dataReader = cmd.ExecuteReader();
+
+                    while (dataReader.HasRows && dataReader.Read())
+                    {
+                        if (dataReader["haslogin"].ToString() == "1")
+                            hasLogin = true;
+                        else
+                            hasLogin = false;
+                    }
+                }
+            }
+            catch (Exception ex) { throw ex; }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                    connection.Dispose();
+                }
+            }
+            return hasLogin;
+        }
+        #endregion
+
         public static List<Products> GetProductsDetails()
         {
             List<Products> lstProductsObject = new List<Products>();

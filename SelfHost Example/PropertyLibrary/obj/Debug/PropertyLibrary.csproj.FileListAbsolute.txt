@@ -4,6 +4,5 @@ E:\Mine\Guvi Project\Source code\SelfHost Example\PropertyLibrary\obj\Debug\Prop
 E:\Mine\Guvi Project\Source code\SelfHost Example\PropertyLibrary\obj\Debug\PropertyLibrary.pdb
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\PropertyLibrary\bin\Debug\PropertyLibrary.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\PropertyLibrary\bin\Debug\PropertyLibrary.pdb
-E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\PropertyLibrary\obj\Debug\PropertyLibrary.csprojResolveAssemblyReference.cache
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\PropertyLibrary\obj\Debug\PropertyLibrary.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\PropertyLibrary\obj\Debug\PropertyLibrary.pdb

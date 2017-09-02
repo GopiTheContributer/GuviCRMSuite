@@ -29,4 +29,4 @@ go
 insert into login(username, password) values('admin', 'admin')
 
 go 
-select * from login
+select COUNT(*) haslogin from login where username = 'test' and password = 'test'

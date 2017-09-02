@@ -10,16 +10,16 @@ namespace GuviCRMSuite
             // First Endpoint
             var config = new HttpConfiguration();
 
+            
+            //Login route
+            config.Routes.MapHttpRoute(
+                name: "loginapi",
+                routeTemplate: "apilogin/{controller}/");
+
+            //default Route
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-            //Second Endpoint
-            config.Routes.MapHttpRoute(
-                name: "Api1",
-                routeTemplate: "api1/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
 
