@@ -1,22 +1,21 @@
 ﻿using System.Web.Http;
-using Owin;
-using System.Web.Http.Owin;
 using GuviCRMSuite.BALLibrary;
+using System.Web.Cors;
 
 namespace GuviCRMSuite
 {
     public class LoginController : ApiController
     {
         [HttpGet]
-        public string GetTest()
+        public string GetMethod()
         {
-            return "success";
+            return "This one is working fine";
         }
+
         [HttpPost]
-        //public bool GetValidateLogin(string username, string password)
+        //[System.Web.Http.HttpPost]
         public bool ValidateLogin(string username, string password)
         {
-            //string username = "admin"; string password = "admin";
             return BusinessAccessClass.GetLoginDetails(username, password);
         }
     }

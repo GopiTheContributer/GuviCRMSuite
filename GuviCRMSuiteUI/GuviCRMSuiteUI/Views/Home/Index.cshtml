@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     //ViewBag.Title = "Index";
     Layout = "~/_LayoutPage.cshtml";
 }
@@ -15,6 +14,7 @@
                 <input type="password" class="form-control input-lg" id="txtPassword" placeholder="Password" required="" />
                 <div class="pwstrength_viewport_progress"></div>
                 <button type="submit" name="go" id="btnLogin" class="btn btn-lg btn-primary btn-block">Sign in</button>
+                <div id="loginErrorMessage"></div>
                 <div>
                     <a href="#">Forget password?</a>
                 </div>
@@ -23,18 +23,40 @@
     </div>
 </div>
 
-<script>
-    $('#btnLogin').click(function () {
-        alert('username: ' + $('#txtUsername').val() + ' password: ' + $('#txtPassword').val());
+<style>
+    .login-error-msg {
+        background-color: mediumpurple;
+        padding: 12px;
+        margin: 12px;
+        opacity: 0.5;
+        color: #fff;
+        border-radius: 8px;
+    }
+</style>
 
+<script>
+    $('#btnLogin').click(function (e) {
         $.ajax({
-            url: "http://localhost:1268/apilogin/login",
-            crossDomain: true,
-            cache: true,
+            url: "http://localhost:12681/apilogin/login" + "?username=" + $('#txtUsername').val()
+                + "&password=" + $('#txtPassword').val(),
             type: "POST",
-            data: { username: $('#txtUsername').val(), password: $('#txtPassword').val() },
-            success: function (data) { alert('success'); window.location.href = "../DashBoard.cshtml"; },
-            error: function (err) { alert(err); console.log(err); }
+            dataType: "json",
+            success: function (data) {
+                //for valid login. service will return true else false.
+                if (data == true) {
+                    window.location.href = "../Dashboard/Dashboard";
+                }
+                else {
+                    $('#loginErrorMessage').fadeIn(1000);
+                    $('#loginErrorMessage').empty().addClass('login-error-msg').text('Not a valid login.');
+                    setTimeout(function () { $('#loginErrorMessage').fadeOut(); }, 3000);
+                    $('#txtUsername').val('');
+                    $('#txtPassword').val('');
+                    $('#txtUsername').focus();
+                }
+            },
+            error: function (err) { windoq.location.href = "../ServiceInterupted/ServiceInterupted"; }
         });
+        e.preventDefault();
     });
 </script>

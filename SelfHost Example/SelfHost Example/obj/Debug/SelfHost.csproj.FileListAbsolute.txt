@@ -31,6 +31,7 @@ E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\SelfHost Example.exe
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\SelfHost Example.pdb
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\BALLibrary.dll
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.Cors.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.Diagnostics.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
@@ -39,18 +40,22 @@ E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Owin.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\PropertyLibrary.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\System.Net.Http.Formatting.dll
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\System.Web.Cors.dll
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\System.Web.Http.Cors.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\System.Web.Http.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\System.Web.Http.Owin.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\DACLibrary.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\BALLibrary.pdb
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\PropertyLibrary.pdb
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.xml
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.Cors.xml
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.Diagnostics.xml
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.Hosting.xml
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Newtonsoft.Json.xml
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\System.Net.Http.Formatting.xml
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\System.Web.Http.xml
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\System.Web.Http.Cors.xml
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\System.Web.Http.Owin.xml
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\DACLibrary.pdb
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\obj\Debug\SelfHost.csprojResolveAssemblyReference.cache

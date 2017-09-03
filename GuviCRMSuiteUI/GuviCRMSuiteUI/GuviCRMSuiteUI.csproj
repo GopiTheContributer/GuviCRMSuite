@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Images\broken-service.jpg" />
     <Content Include="Scripts\css\bootstrap-grid.css" />
     <Content Include="Scripts\css\bootstrap-grid.min.css" />
     <Content Include="Scripts\css\bootstrap-reboot.css" />
@@ -105,7 +106,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServiceInteruptedController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -120,7 +123,8 @@
     <Content Include="Scripts\css\bootstrap.css.map" />
     <Content Include="Scripts\css\bootstrap.min.css.map" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\DashBoard.cshtml" />
+    <Content Include="Views\Dashboard\Dashboard.cshtml" />
+    <Content Include="Views\ServiceInterupted\ServiceInterupted.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

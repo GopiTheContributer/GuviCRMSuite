@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using Owin;
+using System.Web.Http.Cors;
 
 namespace GuviCRMSuite
 {
@@ -9,8 +10,12 @@ namespace GuviCRMSuite
         {
             // First Endpoint
             var config = new HttpConfiguration();
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
-            
+            //var cors = new EnableCorsAttribute("*", "*", "GET, POST, OPTIONS");
+           // var cors = new EnableCorsAttribute("*", "*", "*");
+            //config.EnableCors(cors);
+
             //Login route
             config.Routes.MapHttpRoute(
                 name: "loginapi",

@@ -7,7 +7,7 @@ namespace GuviCRMSuite
     {
         static void Main()
         {
-            const string URL = "http://localhost:1268";
+            const string URL = "http://localhost:12681";
             using (WebApp.Start<Startup>(URL))
             {
                 Console.WriteLine("Web Server is running on: " + URL + "\n Press any key to quit.");
