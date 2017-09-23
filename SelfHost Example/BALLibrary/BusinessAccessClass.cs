@@ -14,7 +14,7 @@ namespace GuviCRMSuite.BALLibrary
 
         public static void GetEventDetailsForCalender()
         {
-
+            return DataAccessClass.GetEventDetailsForCalender();
         }
         #endregion
 

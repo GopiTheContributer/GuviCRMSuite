@@ -23,10 +23,7 @@ namespace GuviCRMSuite.DACLibrary
             bool hasLogin = false;
             try
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["CRMSuiteConStr"].ToString();
-                connection = new SqlConnection(connectionString);
-
-                using (connection = new SqlConnection(connectionString))
+                using (connection = new SqlConnection(GetConnectionString.GetConnectionDetails()))
                 {
                     DataSet ds = new DataSet();
 
@@ -95,6 +92,11 @@ namespace GuviCRMSuite.DACLibrary
                 }
             }
             return isAdded;
+        }
+
+        public static void GetEventDetailsForCalender()
+        {
+
         }
         #endregion
     }

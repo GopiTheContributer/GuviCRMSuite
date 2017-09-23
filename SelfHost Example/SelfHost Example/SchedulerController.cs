@@ -12,5 +12,11 @@ namespace GuviCRMSuite
         {
             BusinessAccessClass.AddNewEvents(schedulerPropertyObj);
         }
+
+        [HttpGet]
+        public static void GetEventDetailsForCalender()
+        {
+            BusinessAccessClass.GetEventDetailsForCalender();
+        }
     }
 }
