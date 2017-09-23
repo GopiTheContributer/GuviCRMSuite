@@ -6,17 +6,19 @@ namespace GuviCRMSuite.BALLibrary
 {
     public class BusinessAccessClass
     {
-        public static List<Products> GetProductsDetails()
+        #region "code for scheduler controller"
+        public static bool AddNewEvents(SchedulerProperty schedulerPropertyObj)
         {
-            return DataAccessClass.GetProductsDetails();
+            return DataAccessClass.AddNewEvents(schedulerPropertyObj);
         }
 
-        public static Products GetProductDetail(int productId)
+        public static void GetEventDetailsForCalender()
         {
-            return DataAccessClass.GetProductsDetail(productId);
-        }
 
-        #region "Login"
+        }
+        #endregion
+
+        #region "Code for Login controller"
         public static bool GetLoginDetails(string username, string password)
         {
             return DataAccessClass.GetLogin(username, password);

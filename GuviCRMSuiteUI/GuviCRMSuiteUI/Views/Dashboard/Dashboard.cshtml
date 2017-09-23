@@ -1,8 +1,139 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Dashboard";
-    Layout = "~/_LayoutPage.cshtml";
+    Layout = "~/Views/_AppLayoutPage.cshtml";
 }
 
-<h2>Dashboard</h2>
 
+<h2>Dashboard</h2>
+<div id="calendar" style="width:50%; height:50%; padding:12px; margin:0px auto;"></div>
+
+<div class="modal" id="ModalEvent" tabindex="-1" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row">
+                    <div class="col-sm-4"><h3><span style="padding:12px;">Event Scheduler</span></h3></div>
+                    <div class="col-sm-4 pull-right">
+                        <button type="button" id="btnCloseModal" class="text-center close pull-right" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <table style="width:95%; margin:0px auto;">
+                    <tr style="padding:15px;">
+                        <td><label>Event name</label></td>
+                        <td><input type="text" id="txtEventName" class="form-control" autofocus maxlength="25" /></td>
+                    </tr>
+                    <tr style="padding:15px;">
+                        <td><label>Start Datetime</label></td>
+                        <td><input type="date" class="form-control" id="txtStartDateTime" /></td>
+                        <td><label>End Datetime</label></td>
+                        <td><input type="date" class="form-control" id="txtEndDateTime" /></td>
+                    </tr>
+                    <tr style="padding:15px;">
+                        <td><label>Agenda of the meeting</label></td>
+                        <td colspan="2">
+                            <textarea class="form-control" id="txtEventAgenda" rows="6" cols="7" maxlength="1000"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" id="btnCreateEvent">Create Event</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal" id="btnCancelEvent">Cancel Event</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            defaultDate: '2017-09-12',
+            navLinks: true, // can click day/week names to navigate views
+            selectable: true,
+            selectHelper: true,
+            select: function (start, end) {
+                var title = "Welcome to Tigwa Chemicals CRM";
+                $('#ModalEvent').modal('show');
+                var eventData;
+                if (true) {
+                    eventData = {
+                        title: title,
+                        start: start,
+                        end: end
+                    };
+                    $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                }
+                $('#calendar').fullCalendar('unselect');
+            },
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+                {
+                    title: 'All Day Event',
+                    start: '2017-09-01'
+                }
+                //{
+                //    id: 999,
+                //    title: 'Repeating Event',
+                //    start: '2017-09-09T16:00:00'
+                //},
+                //{
+                //    title: 'Click for Google',
+                //    url: 'http://google.com/',
+                //    start: '2017-09-28'
+                //}
+            ]
+        });
+
+    });
+
+    $('#btnCreateEvent').click(function () {
+        if (ValidateFields()) { //Ajax call to service which store data to the DB
+            alert('validate success');
+            var schedulerPropertyObject = {
+                GoalTitle: $('#txtEventName').val(),
+                goals: $('#txtEventAgenda').val(),
+                CreatedBy: 'gopi',
+                ModifiedBy: 'gopi',
+                EventID: 'event001',
+                EventStartDTTM: $('#txtStartDateTime').val(),
+                EventEndDTTM: $('#txtEndDateTime').val(),
+            };
+
+            $.ajax({
+                url: 'http://localhost:12681/scheduler/Scheduler',
+                type: 'POST',
+                data:JSON.stringify(schedulerPropertyObject),
+                contentType: 'application/json; charset=utf-8',
+                success: function (response) { alert("New event added to calender"); },
+                error: function (jqXHR) { }
+            });
+        }
+        else {
+            //Display validation error message to user.
+            alert('All the fields are mandatory. ');
+        }
+    });
+
+    function ValidateFields() {
+        debugger;
+        var eventName = $('#txtEventName').val();
+        var startDate = $('#txtStartDateTime').val();
+        var endDate = $('#txtEndDateTime').val();
+        var eventAgenda = $('#txtEventAgenda').val();
+
+        if (eventAgenda == null || startDate == null || endDate == null || eventName == null)
+        { return false; }
+
+        return true;
+    }
+
+
+</script>

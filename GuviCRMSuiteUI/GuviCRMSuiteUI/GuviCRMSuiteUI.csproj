@@ -91,15 +91,21 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Images\broken-service.jpg" />
+    <Content Include="Images\Default.jpg" />
     <Content Include="Scripts\css\bootstrap-grid.css" />
     <Content Include="Scripts\css\bootstrap-grid.min.css" />
     <Content Include="Scripts\css\bootstrap-reboot.css" />
     <Content Include="Scripts\css\bootstrap-reboot.min.css" />
+    <Content Include="Scripts\css\bootstrap-theme.min.css" />
     <Content Include="Scripts\css\bootstrap.css" />
     <Content Include="Scripts\css\bootstrap.min.css" />
+    <Content Include="Scripts\css\fullcalendar.min.css" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\js\bootstrap.js" />
     <Content Include="Scripts\js\bootstrap.min.js" />
+    <Content Include="Scripts\js\fullcalendar.min.js" />
+    <Content Include="Scripts\js\moment.min.js" />
+    <Content Include="Scripts\js\npm.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -125,13 +131,20 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Dashboard\Dashboard.cshtml" />
     <Content Include="Views\ServiceInterupted\ServiceInterupted.cshtml" />
+    <Content Include="Scripts\css\bootstrap-theme.min.css.map" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\_AppLayoutPage.cshtml" />
+    <Content Include="Views\_LayoutPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="_LayoutPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -28,6 +28,6 @@ E:\Mine\Guvi Project\Source code\GuviCRMSuite\GuviCRMSuiteUI\GuviCRMSuiteUI\bin\
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\GuviCRMSuiteUI\GuviCRMSuiteUI\bin\System.Web.Webpages.Razor.xml
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\GuviCRMSuiteUI\GuviCRMSuiteUI\bin\System.Web.Helpers.xml
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\GuviCRMSuiteUI\GuviCRMSuiteUI\bin\System.Web.Mvc.xml
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\GuviCRMSuiteUI\GuviCRMSuiteUI\obj\Debug\GuviCRMSuiteUI.csprojResolveAssemblyReference.cache
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\GuviCRMSuiteUI\GuviCRMSuiteUI\obj\Debug\GuviCRMSuiteUI.dll
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\GuviCRMSuiteUI\GuviCRMSuiteUI\obj\Debug\GuviCRMSuiteUI.pdb
-E:\Mine\Guvi Project\Source code\GuviCRMSuite\GuviCRMSuiteUI\GuviCRMSuiteUI\obj\Debug\GuviCRMSuiteUI.csprojResolveAssemblyReference.cache

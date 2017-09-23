@@ -1,28 +1,64 @@
 ﻿@{
-    //ViewBag.Title = "Index";
-    Layout = "~/_LayoutPage.cshtml";
+    ViewBag.Title = "Tigwa CRM";
+    Layout = "~/Views/_LayoutPage.cshtml";
 }
 
-<div class="row">
-    <div class="col-lg-4">
-        asdfadfadfadfadfadfadfadf
-    </div>
-    <div class="col-md-4">
-        <section class="login-form">
-            <form method="post" action="#">
-                <input type="text" name="username" id="txtUsername" placeholder="Enter username" required="" autofocus="" class="form-control input-lg" />
-                <input type="password" class="form-control input-lg" id="txtPassword" placeholder="Password" required="" />
-                <div class="pwstrength_viewport_progress"></div>
-                <button type="submit" name="go" id="btnLogin" class="btn btn-lg btn-primary btn-block">Sign in</button>
-                <div id="loginErrorMessage"></div>
-                <div>
-                    <a href="#">Forget password?</a>
+<style>
+    body {
+        background-image: url("../Images/Default.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: Georgia;
+        color: white;
+        min-height: 100%;
+        position: relative;
+    }
+
+    .navbar {
+        background-color: transparent;
+        background: transparent;
+        border-color: transparent;
+    }
+
+        .navbar li {
+            color: #000;
+        }
+
+    sub {
+        font-size: 14px;
+    }
+
+    .custom-center {
+          transform: translateY(-50%);
+          top:50%;
+          vertical-align:middle !important;
+          position: relative;
+    }
+</style>
+<div class="container">
+    <div class="row" style="padding-top:20%;">
+        <div class="col-lg-8">
+            <h1>Welcome, To TIGWA CRM</h1>
+        </div>
+        <div class="col-lg-4">
+            <center>
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user"></i></span>
+                    <input type="text" class="form-control" id="txtUsername" maxlength="25" placeholder="Enter username" aria-describedby="sizing-addon1">
+                </div><br>
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-hand-right"></i></span>
+                    <input type="password" class="form-control" id="txtPassword" maxlength="25" placeholder="Enter password" aria-describedby="sizing-addon2">
                 </div>
-            </form>
-        </section>
+            </center>
+            <div style="padding: 12px;">
+                <button type="button" id="btnLogin" class="btn btn-success btn-lg">Login</button>
+                <button type="button" id="btnCancel" class="btn btn-success btn-lg">Cancel</button>
+            </div>
+            <label id="loginErrorMessage"></label>
+        </div>
     </div>
 </div>
-
 <style>
     .login-error-msg {
         background-color: mediumpurple;
@@ -35,6 +71,11 @@
 </style>
 
 <script>
+    $('#btnCancel').click(function () {
+        $('#txtPassword').val('');
+        $('#txtUsername').val('');
+    });
+
     $('#btnLogin').click(function (e) {
         $.ajax({
             url: "http://localhost:12681/apilogin/login" + "?username=" + $('#txtUsername').val()

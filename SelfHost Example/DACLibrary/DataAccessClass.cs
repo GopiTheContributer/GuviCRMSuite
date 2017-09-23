@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using GuviCRMSuite.Properties;
 using System.Collections.Generic;
+using DACLibrary.HelperClass;
 
 namespace GuviCRMSuite.DACLibrary
 {
@@ -56,30 +57,31 @@ namespace GuviCRMSuite.DACLibrary
         }
         #endregion
 
-        public static List<Products> GetProductsDetails()
+        #region "code for scheduler"
+        public static bool AddNewEvents(SchedulerProperty schedulerPropertyObj)
         {
-            List<Products> lstProductsObject = new List<Products>();
-            Products productProperty = null;
+            bool isAdded = false; int affectedRows = 0;
             try
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["CRMSuiteConStr"].ToString();
-                connection = new SqlConnection(connectionString);
-
-                using (connection = new SqlConnection(connectionString))
+                using (connection = new SqlConnection(GetConnectionString.GetConnectionDetails()))
                 {
-                    DataSet ds = new DataSet();
-
-                    cmd = new SqlCommand("select Product, CompanyName, Price from products order by CompanyName asc", connection);
-                    connection.Open();
-                    dataReader = cmd.ExecuteReader();
-
-                    while (dataReader.HasRows && dataReader.Read())
+                    using (cmd = new SqlCommand("AddNewEvent", connection))
                     {
-                        productProperty = new Products();
-                        productProperty.CompanyName = dataReader["CompanyName"].ToString();
-                        productProperty.Product = dataReader["Product"].ToString();
-                        productProperty.Price = Convert.ToInt64(dataReader["Price"]);
-                        lstProductsObject.Add(productProperty);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@goaltitle", SqlDbType.VarChar).Value = schedulerPropertyObj.GoalTitle;
+                        cmd.Parameters.AddWithValue("@goals", SqlDbType.VarChar).Value = schedulerPropertyObj.goals;
+                        cmd.Parameters.AddWithValue("@createdby", SqlDbType.VarChar).Value = schedulerPropertyObj.CreatedBy;
+                        cmd.Parameters.AddWithValue("@modifiedby", SqlDbType.VarChar).Value = schedulerPropertyObj.ModifiedBy;
+                        cmd.Parameters.AddWithValue("@event_id", SqlDbType.VarChar).Value = schedulerPropertyObj.EventID;
+                        cmd.Parameters.AddWithValue("@eventstartdttm", SqlDbType.DateTime).Value = schedulerPropertyObj.EventStartDTTM;
+                        cmd.Parameters.AddWithValue("@eventenddttm", SqlDbType.DateTime).Value = schedulerPropertyObj.EventEndDTTM;
+
+                        connection.Open();
+                        affectedRows = cmd.ExecuteNonQuery();
+
+                        if (affectedRows > 0)
+                            isAdded = true;
                     }
                 }
             }
@@ -92,43 +94,8 @@ namespace GuviCRMSuite.DACLibrary
                     connection.Dispose();
                 }
             }
-            return lstProductsObject;
+            return isAdded;
         }
-
-        public static Products GetProductsDetail(int productId)
-        {
-            Products productProperty = new Products();
-            try
-            {
-                string connectionString = ConfigurationManager.ConnectionStrings["CRMSuiteConStr"].ToString();
-                connection = new SqlConnection(connectionString);
-
-                using (connection = new SqlConnection(connectionString))
-                {
-                    DataSet ds = new DataSet();
-
-                    cmd = new SqlCommand("select Product, CompanyName, Price from products where id = " + productId + "", connection);
-                    connection.Open();
-                    dataReader = cmd.ExecuteReader();
-
-                    while (dataReader.HasRows && dataReader.Read())
-                    {
-                        productProperty.CompanyName = dataReader["CompanyName"].ToString();
-                        productProperty.Product = dataReader["Product"].ToString();
-                        productProperty.Price = Convert.ToInt64(dataReader["Price"]);
-                    }
-                }
-            }
-            catch (Exception ex) { throw ex; }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                    connection.Dispose();
-                }
-            }
-            return productProperty;
-        }
+        #endregion
     }
 }

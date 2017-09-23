@@ -12,14 +12,15 @@ namespace GuviCRMSuite
             var config = new HttpConfiguration();
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
-            //var cors = new EnableCorsAttribute("*", "*", "GET, POST, OPTIONS");
-           // var cors = new EnableCorsAttribute("*", "*", "*");
-            //config.EnableCors(cors);
-
             //Login route
             config.Routes.MapHttpRoute(
                 name: "loginapi",
                 routeTemplate: "apilogin/{controller}/");
+
+            //Scheduler route
+            config.Routes.MapHttpRoute(
+                name: "schedulerapi",
+                routeTemplate: "scheduler/{controller}/");
 
             //default Route
             config.Routes.MapHttpRoute(

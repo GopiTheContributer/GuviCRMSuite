@@ -11,5 +11,7 @@ namespace GuviCRMSuite
         {
             return BusinessAccessClass.GetLoginDetails(username, password);
         }
+
+        public bool LogoutUser() { return true; }
     }
 }
