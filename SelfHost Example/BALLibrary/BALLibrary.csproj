@@ -40,8 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessAccessClass.cs" />
+    <Compile Include="LoginBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchedulerBAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DACLibrary\DACLibrary.csproj">

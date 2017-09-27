@@ -8,15 +8,15 @@ namespace GuviCRMSuite
     public class SchedulerController : ApiController
     {
         [HttpPost]
-        public void AddNewEvent([FromBody]SchedulerProperty schedulerPropertyObj)
+        public bool AddNewEvent([FromBody]SchedulerAddEvent schedulerPropertyObj)
         {
-            BusinessAccessClass.AddNewEvents(schedulerPropertyObj);
+            return SchedulerBAL.AddNewEvents(schedulerPropertyObj);
         }
 
         [HttpGet]
-        public static void GetEventDetailsForCalender()
+        public List<SchedulerCalenderEventData> GetEventDetailsForCalender()
         {
-            BusinessAccessClass.GetEventDetailsForCalender();
+            return SchedulerBAL.GetEventDetailsForCalender();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace GuviCRMSuite.Properties
 {
-    public class SchedulerProperty
+    public class SchedulerAddEvent
     {
         public string GoalTitle { get; set; }
         public string goals { get; set; }
@@ -11,5 +11,13 @@ namespace GuviCRMSuite.Properties
         public string EventID { get; set; }
         public DateTime EventStartDTTM { get; set; }
         public DateTime EventEndDTTM { get; set; }
+    }
+
+    public class SchedulerCalenderEventData
+    {
+        public string Title { get; set; }
+        public string Start { get; set; }
+        public string End { get; set; }
+
     }
 }

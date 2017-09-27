@@ -29,10 +29,10 @@
     }
 
     .custom-center {
-          transform: translateY(-50%);
-          top:50%;
-          vertical-align:middle !important;
-          position: relative;
+        transform: translateY(-50%);
+        top: 50%;
+        vertical-align: middle !important;
+        position: relative;
     }
 </style>
 <div class="container">
@@ -44,29 +44,69 @@
             <center>
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-user"></i></span>
-                    <input type="text" class="form-control" id="txtUsername" maxlength="25" placeholder="Enter username" aria-describedby="sizing-addon1">
+                    <input type="text" class="form-control txt" id="txtUsername" maxlength="25" placeholder="Enter username" aria-describedby="sizing-addon1">
                 </div><br>
                 <div class="input-group">
                     <span class="input-group-addon" id="sizing-addon2"><i class="glyphicon glyphicon-hand-right"></i></span>
-                    <input type="password" class="form-control" id="txtPassword" maxlength="25" placeholder="Enter password" aria-describedby="sizing-addon2">
+                    <input type="password" class="form-control txt" id="txtPassword" maxlength="25" placeholder="Enter password" aria-describedby="sizing-addon2">
                 </div>
             </center>
-            <div style="padding: 12px;">
-                <button type="button" id="btnLogin" class="btn btn-success btn-lg">Login</button>
-                <button type="button" id="btnCancel" class="btn btn-success btn-lg">Cancel</button>
+            <div>
+                <button type="button" id="btnLogin" class="btn Btn_emph Btn_super">Continue</button>
             </div>
             <label id="loginErrorMessage"></label>
         </div>
     </div>
 </div>
 <style>
+    .txt {
+        font-family: gotham, helvetica, arial, sans-serif !important;
+        font-size: 14px !important;
+        height: 37px;
+        border-radius: 7px;
+        padding: 15px;
+    }
+
+    .btn.focus, .btn:focus, .btn:hover {
+        color: #fff !important;
+        text-decoration: none !important;
+    }
+
+    .Btn_emph {
+        font-family: gotham, helvetica, arial, sans-serif;
+        font-style:normal;
+        font-weight:500;
+        font-size:14em;
+        color: #ffffff;
+        background-color: #2dbe60;
+        border-color: #1fae52;
+        height:4em;
+        width: 100%;
+        margin-top:2em;
+        border-radius:7px;  
+    }
+
+    .Btn_super {
+        line-height: 2.75;
+        font-size: 1.33333333em;
+        font-size: 1.33333333rem;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        min-width: 9.625em;
+        min-width: 12.83333333rem;
+        min-height: 2.75em;
+        min-height: 3.66666667rem;
+        padding: 0 1em;
+        padding: 0 1.33333333em;
+    }
+
     .login-error-msg {
-        background-color: mediumpurple;
-        padding: 12px;
-        margin: 12px;
-        opacity: 0.5;
+        background-color:hotpink;
+        margin-top: 4em;
+        padding:12px;
         color: #fff;
-        border-radius: 8px;
+        width:100%;
+        border-radius: 7px;
     }
 </style>
 
@@ -78,7 +118,7 @@
 
     $('#btnLogin').click(function (e) {
         $.ajax({
-            url: "http://localhost:12681/apilogin/login" + "?username=" + $('#txtUsername').val()
+            url: virtualPath + "/apilogin/login" + "?username=" + $('#txtUsername').val()
                 + "&password=" + $('#txtPassword').val(),
             type: "POST",
             dataType: "json",

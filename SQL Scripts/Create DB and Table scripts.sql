@@ -35,5 +35,5 @@ go
 select * from Goal
 select * from Scheduler
 
-select GoalTitle, eventstartdttm, eventenddttm from goal inner join scheduler on goal.goal_id
+select GoalTitle title, EventstartDTTM start, eventenddttm [end] from goal inner join scheduler on goal.goal_id = Scheduler.GoalId
 

@@ -48,55 +48,105 @@
 
 <script>
     $(document).ready(function () {
-        $('#calendar').fullCalendar({
+        //$.ajax({
+        //    url: approximatePath + "/scheduler/Scheduler",
+        //    dataType: 'JSON',
+        //    type: 'GET',
+        //    success: function (responseData) {
+        //        $('div[id=calendar]').fullCalendar({
+        //            header: {
+        //                left: 'prev, next today',
+        //                center: 'title',
+        //                right: 'month,agendaWeek,agendaDay'
+        //            },
+        //            defaultDate: '2017-09-12',
+        //            navLinks: true,
+        //            selectable: true,
+        //            selectHelper: true,
+        //            editable: true,
+        //            eventLimit: true,
+        //            select: function (start, end) {
+        //                var title = "Welcome to Tigwa Chemicals CRM";
+        //                $('#ModalEvent').modal('show');
+        //                var eventData;
+        //                //if (true) {
+        //                //    eventData = {
+        //                //        title: title,
+        //                //        start: start,
+        //                //        end: end
+        //                //    };
+        //                //    $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+        //                //}
+        //                //$('#calendar').fullCalendar('unselect');
+        //            },
+        //            events: $.map(responseData, function (item, i) {
+        //                var eventDetails = new Object();
+        //                eventDetails.id = i;
+        //                //eventDetails.start = new Date(item.start);
+        //                //eventDetails.end = new Date(item.end);
+        //                //eventDetails.title = item.title;
+        //                //eventDetails.start = new Date(item.start);
+        //                eventDetails.start = item.start;
+        //                eventDetails.end = moment.format(item.end);
+        //                //return event;
+        //                alert(eventDetails.title + ' ' + eventDetails.end + ' ' + eventDetails.start);
+        //                $('div[id=calendar]').fullCalendar('renderEvent', eventDetails, true); // stick? = true
+        //            }),
+        //        });
+        //    },
+        //    error: function () { }
+        //});
+
+
+
+        $('div[id=calendar]').fullCalendar({
             header: {
-                left: 'prev,next today',
+                left: 'prev, next today',
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
             defaultDate: '2017-09-12',
-            navLinks: true, // can click day/week names to navigate views
+            navLinks: true,
             selectable: true,
             selectHelper: true,
+            editable: true,
+            eventLimit: true,
             select: function (start, end) {
                 var title = "Welcome to Tigwa Chemicals CRM";
                 $('#ModalEvent').modal('show');
-                var eventData;
-                if (true) {
-                    eventData = {
-                        title: title,
-                        start: start,
-                        end: end
-                    };
-                    $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
-                }
-                $('#calendar').fullCalendar('unselect');
-            },
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-            events: [
-                {
-                    title: 'All Day Event',
-                    start: '2017-09-01'
-                }
-                //{
-                //    id: 999,
-                //    title: 'Repeating Event',
-                //    start: '2017-09-09T16:00:00'
-                //},
-                //{
-                //    title: 'Click for Google',
-                //    url: 'http://google.com/',
-                //    start: '2017-09-28'
-                //}
-            ]
-        });
 
+                var eventData;
+                //if (true) {
+                //    eventData = {
+                //        title: title,
+                //        start: start,
+                //        end: end
+                //    };
+                //    $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+                //}
+                //$('#calendar').fullCalendar('unselect');
+            },
+            eventSource: approximatePath + "/scheduler/Scheduler"
+            //events: $.map(responseData, function (item, i) {
+            //    var eventDetails = new Object();
+            //    eventDetails.id = i;
+            //    //eventDetails.start = new Date(item.start);
+            //    //eventDetails.end = new Date(item.end);
+            //    //eventDetails.title = item.title;
+            //    //eventDetails.start = new Date(item.start);
+
+            //    eventDetails.start = item.start;
+            //    eventDetails.end = moment.format(item.end);
+
+            //    //return event;
+            //    alert(eventDetails.title + ' ' + eventDetails.end + ' ' + eventDetails.start);
+            //    $('div[id=calendar]').fullCalendar('renderEvent', eventDetails, true); // stick? = true
+            //}),
+        });
     });
 
     $('#btnCreateEvent').click(function () {
         if (ValidateFields()) { //Ajax call to service which store data to the DB
-            alert('validate success');
             var schedulerPropertyObject = {
                 GoalTitle: $('#txtEventName').val(),
                 goals: $('#txtEventAgenda').val(),
@@ -108,12 +158,24 @@
             };
 
             $.ajax({
-                url: 'http://localhost:12681/scheduler/Scheduler',
+                url: approximatePath + '/scheduler/Scheduler',
                 type: 'POST',
-                data:JSON.stringify(schedulerPropertyObject),
+                data: JSON.stringify(schedulerPropertyObject),
                 contentType: 'application/json; charset=utf-8',
-                success: function (response) { alert("New event added to calender"); },
-                error: function (jqXHR) { }
+                success: function (response) {
+                    if (response == true) {
+                        alert("New event added to calender");
+                        $('#txtStartDateTime').val('');
+                        $('#txtEndDateTime').val('');
+                        $('#txtEventAgenda').val('');
+                        $('#txtEventName').val('');
+                        $('#ModalEvent').modal('hide');
+                    }
+                    else { }
+                },
+                error: function (jqXHR) {
+                    window.location.href = "../ServiceInterupted/ServiceInterupted";
+                }
             });
         }
         else {
@@ -123,7 +185,6 @@
     });
 
     function ValidateFields() {
-        debugger;
         var eventName = $('#txtEventName').val();
         var startDate = $('#txtStartDateTime').val();
         var endDate = $('#txtEndDateTime').val();
