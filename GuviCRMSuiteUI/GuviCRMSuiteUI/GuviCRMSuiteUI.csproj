@@ -92,6 +92,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\broken-service.jpg" />
     <Content Include="Images\Default.jpg" />
+    <Content Include="Images\Logo.png" />
     <Content Include="Scripts\css\bootstrap-grid.css" />
     <Content Include="Scripts\css\bootstrap-grid.min.css" />
     <Content Include="Scripts\css\bootstrap-reboot.css" />

@@ -5,8 +5,25 @@
 
 
 <h2>Dashboard</h2>
-<div id="calendar" style="width:50%; height:50%; padding:12px; margin:0px auto;"></div>
+<div class="container" style="margin:0px auto;">
+    <div id="calendar" style="width:70%; height:50%; padding:12px; margin:0px auto;"></div>
+</div>
 
+<div class="modal" id="success-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"></div>
+            <div class="modal-body">
+                <div class="row">
+                    <label class="text-center" style="padding:15px;">New event added successfully.</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal" id="btnOk">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal" id="ModalEvent" tabindex="-1" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -97,8 +114,6 @@
         //    error: function () { }
         //});
 
-
-
         $('div[id=calendar]').fullCalendar({
             header: {
                 left: 'prev, next today',
@@ -164,12 +179,12 @@
                 contentType: 'application/json; charset=utf-8',
                 success: function (response) {
                     if (response == true) {
-                        alert("New event added to calender");
                         $('#txtStartDateTime').val('');
                         $('#txtEndDateTime').val('');
                         $('#txtEventAgenda').val('');
                         $('#txtEventName').val('');
                         $('#ModalEvent').modal('hide');
+                        $('#success-modal').modal('show');
                     }
                     else { }
                 },
