@@ -61,3 +61,7 @@ E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\obj\Debug\SelfHost.csprojResolveAssemblyReference.cache
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\obj\Debug\SelfHost Example.exe
 E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\obj\Debug\SelfHost Example.pdb
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.Security.dll
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.Security.xml
+E:\Mine\Guvi Project\Source code\GuviCRMSuite\SelfHost Example\SelfHost Example\bin\Debug\Microsoft.Owin.Security.OAuth.xml
