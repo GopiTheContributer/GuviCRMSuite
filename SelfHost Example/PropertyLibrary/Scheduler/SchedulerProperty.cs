@@ -11,6 +11,7 @@ namespace GuviCRMSuite.Properties
         public string EventID { get; set; }
         public DateTime EventStartDTTM { get; set; }
         public DateTime EventEndDTTM { get; set; }
+        public string GoalId { get; set; }
     }
 
     public class SchedulerCalenderEventData

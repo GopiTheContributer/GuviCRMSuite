@@ -16,5 +16,20 @@ namespace GuviCRMSuite.BALLibrary
         {
             return SchedulerDAC.GetEventDetailsForCalender();
         }
+
+        public static List<SchedulerCalenderEventData> GetAEventDetailForCalender(string goalId)
+        {
+            return SchedulerDAC.GetAEventDetailForCalender(goalId);
+        }
+
+        public static bool DeleteEvent(string id)
+        {
+            return SchedulerDAC.DeleteEvent(id);
+        }
+
+        public static bool UpdateEvent(SchedulerAddEvent schedulerPropertyObj)
+        {
+            return SchedulerDAC.UpdateEvent(schedulerPropertyObj);
+        }
     }
 }

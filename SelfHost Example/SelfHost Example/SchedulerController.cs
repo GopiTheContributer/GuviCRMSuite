@@ -18,5 +18,23 @@ namespace GuviCRMSuite
         {
             return SchedulerBAL.GetEventDetailsForCalender();
         }
+
+        [HttpGet]
+        public List<SchedulerCalenderEventData> GetAEventDetailForCalender(string goalId)
+        {
+            return SchedulerBAL.GetAEventDetailForCalender(goalId);
+        }
+
+        [HttpDelete]
+        public bool DeleteEvent(string id)
+        {
+            return SchedulerBAL.DeleteEvent(id);
+        }
+
+        [HttpPut]
+        public static bool UpdateEvent(SchedulerAddEvent schedulerPropertyObj)
+        {
+            return SchedulerBAL.UpdateEvent(schedulerPropertyObj);
+        }
     }
 }
